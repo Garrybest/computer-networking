@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.net.*;
-import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -24,7 +23,7 @@ public class UdpClient {
         try {
             String message = "abcdefghijklmn";
             InetAddress address = InetAddress.getLocalHost();
-            DatagramSocket socket = new DatagramSocket(12000);
+            DatagramSocket socket = new DatagramSocket();
             socket.setSoTimeout(5 * 1000);
 
             DatagramPacket sendMessage = new DatagramPacket(message.getBytes(), message.getBytes().length, address, 10020);
